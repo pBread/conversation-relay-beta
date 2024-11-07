@@ -29,10 +29,10 @@ app.post("/incoming", (req, res) => {
 <Response>
   <Connect action="https://voxray-6456.twil.io/live-agent-handoff">
     <ConversationRelay  url="wss://${process.env.SERVER}/sockets" 
-                        ttsProvider="${cfg.ttsProvider}" 
-                        voice="${cfg.ttsVoice}" 
                         dtmfDetection="true" 
-                        interruptByDtmf="true" />
+                        interruptByDtmf="true" 
+                        ttsProvider="${cfg.ttsProvider}" 
+                        voice="${cfg.ttsVoice}" />
   </Connect>
 </Response>`;
     res.type("text/xml");
